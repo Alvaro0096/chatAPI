@@ -25,7 +25,17 @@ require './header.php';
                     </div>
                 </div>
                 <div class="chat-messages">
-
+                        <div class="outgoin-message">
+                            <div class="details">
+                                <p>Lorem, ipsum dolor </p>
+                            </div>
+                        </div>
+                        <div class="incoming-message">
+                            <img class="incoming-message-logo" src="./images/default_user.png" alt="userImage">
+                            <div class="details">
+                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est blanditiis illum id rem modi culpa assumenda nemo, quasi, quam commodi, odio minima fuga ut voluptatibus animi dolorum eos quo alias!</p>
+                            </div>
+                        </div>
                 </div>
                 <div class="chat-sent">
                     <form action="">

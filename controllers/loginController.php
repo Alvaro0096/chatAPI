@@ -25,11 +25,14 @@ if(isset($_POST['submit'])){
         header('Location: ../login.php?error=notMatch');
         exit;
     } else {
+        $login->setOnline($email);
         session_start();
         $_SESSION['id'] = $getUser['id'];
+        $_SESSION['reference'] = $getUser['reference'];
         $_SESSION['username'] = $getUser['username'];
         $_SESSION['email'] = $getUser['email'];
         $_SESSION['profilePicture'] = $getUser['profilePicture'];
+        $_SESSION['online'] = $getUser['online'];
         header("Location: ../users.php");
     }
 }

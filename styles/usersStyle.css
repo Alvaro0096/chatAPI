@@ -1,9 +1,10 @@
 .users-container{
-    min-height: 200px;
+    max-height: 500px;
     width: 500px;
     border: 2px solid #000;
     border-radius: 5px;
     background-color: red;
+    overflow-y: auto;
 }
 
 .users-header{

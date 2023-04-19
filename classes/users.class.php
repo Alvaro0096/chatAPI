@@ -9,7 +9,7 @@ class Users extends DBConnection{
     }
 
     public function getAllUsers($id, $searchTerm = NULL){
-        $query = "SELECT id, username, email, profilePicture, online FROM users WHERE id != :id";
+        $query = "SELECT id, reference, username, email, profilePicture, online FROM users WHERE id != :id";
 
         if($searchTerm != NULL){
             $query .= " AND username LIKE '".$searchTerm."%';";
@@ -30,7 +30,7 @@ class Users extends DBConnection{
     }
 
     public function getUserChat($id){
-        $query = "SELECT id, username, email, profilePicture, online FROM users WHERE id = :id;";
+        $query = "SELECT id, reference, username, email, profilePicture, online FROM users WHERE id = :id;";
         
         $stmt = $this->conn->prepare($query);
 

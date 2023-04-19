@@ -69,7 +69,48 @@ body{
 .chat-messages{
     width: 100%;
     height: calc(600px - 160px);
+    overflow-y: auto;
     background-color: azure;
+}
+
+.chat-messages p{
+    padding: 10px 15px;
+}
+
+.outgoin-message{
+    max-width: 450px;
+    margin-left: auto;
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.outgoin-message .details{
+    width: auto;
+    border-radius: 20px 20px 0 20px;
+    background-color: green;
+}
+
+.incoming-message{
+    display: flex;
+    align-items: center;
+}
+
+.incoming-message .details{
+    max-width: 450px;
+    margin-right: auto;
+    margin-top: 10px;
+    display: flex;
+    border-radius: 20px 20px 20px 0;
+    background-color: gray;
+}
+
+.incoming-message-logo{
+    height: 40px;
+    width: 40px;
+    margin: 0 10px;
+    border-radius: 50%;
+    background-color: green;
 }
 
 .chat-sent{

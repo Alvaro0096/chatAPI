@@ -9,7 +9,7 @@ class Login extends DBConnection{
     }
 
     public function getUser($email){
-        $query = "SELECT id, username, email, password, profilePicture FROM users WHERE email = :email;";
+        $query = "SELECT id, reference, username, email, password, profilePicture, online FROM users WHERE email = :email;";
 
         $stmt = $this->conn->prepare($query);
 
@@ -22,6 +22,20 @@ class Login extends DBConnection{
         } else {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             return $row;
+        }
+    }
+
+    public function setOnline($email){
+        $query = "UPDATE users SET online = 1 WHERE email = :email;";
+
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(':email', $email);
+
+        if(!$stmt->execute()){
+            return false;
+        } else {
+            return true;
         }
     }
 }

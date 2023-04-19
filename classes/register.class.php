@@ -8,13 +8,15 @@ class Register extends DBConnection{
         $this->conn = $this->getConnection();
     }
 
-    public function insertUser($username, $email, $password, $profilePicture = NULL){
+    public function insertUser($reference, $username, $email, $password, $online = 1, $profilePicture = NULL){
         $query = "
             INSERT INTO users 
             SET 
+            reference = :reference,
             username = :username,
             email = :email,
-            password = :password";
+            password = :password,
+            online = :online";
 
         if($profilePicture != NULL){
             $query .= ", profilePicture = :profilePicture;";
@@ -22,9 +24,11 @@ class Register extends DBConnection{
 
         $stmt = $this->conn->prepare($query);
 
+        $stmt->bindParam(':reference', $reference);
         $stmt->bindParam(':username', $username);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $password);
+        $stmt->bindParam(':online', $online);
 
         $profilePicture != NULL ? $stmt->bindParam(':profilePicture', $profilePicture) : "";
 
@@ -51,7 +55,7 @@ class Register extends DBConnection{
     }
 
     public function getUser($email){
-        $query = "SELECT id, username, email, profilePicture FROM users WHERE email = :email;";
+        $query = "SELECT id, reference, username, email, profilePicture, online FROM users WHERE email = :email;";
 
         $stmt = $this->conn->prepare($query);
 

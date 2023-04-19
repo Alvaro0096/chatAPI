@@ -76,14 +76,17 @@ if(isset($_POST['submit'])){
     }
 
     $password_hash = password_hash($password, PASSWORD_BCRYPT);
-    $insertUser = $register->insertUser($username, $email, $password_hash, $profilePicture);
+    $reference = strtotime(date('c'));
+    $insertUser = $register->insertUser($reference, $username, $email, $password_hash, 1, $profilePicture);
     if($insertUser){
         $getUser = $register->getUser($email);
         session_start();
         $_SESSION['id'] = $getUser['id'];
+        $_SESSION['reference'] = $getUser['reference'];
         $_SESSION['username'] = $getUser['username'];
         $_SESSION['email'] = $getUser['email'];
         $_SESSION['profilePicture'] = $getUser['profilePicture'];
+        $_SESSION['online'] = $getUser['online'];
         header("Location: ../users.php");
     } else {
         header("Location: ../register.php?error=insert");
