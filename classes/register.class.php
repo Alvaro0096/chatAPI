@@ -9,8 +9,7 @@ class Register extends DBConnection{
     }
 
     public function insertUser($reference, $username, $email, $password, $online = 1, $profilePicture = NULL){
-        $query = "
-            INSERT INTO users 
+        $query = "INSERT INTO users 
             SET 
             reference = :reference,
             username = :username,

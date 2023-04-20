@@ -12,39 +12,20 @@ require './header.php';
         <div class="chat-container">
             <div class="chat-display">
                 <div class="chat-header">
-                    <?php
-                        if(!empty($_SESSION['profilePicture'])){
-                            echo '<img class="chat-logo" src="./images/'.$_SESSION['profilePicture'].'" alt="userImage">';
-                        } else {
-                            echo '<img class="chat-logo" src="./images/default_user.png" alt="userImage">';
-                        }
-                    ?>
-                    <div class="chat-info">
-                        <span class="chat-name"><?php echo $_SESSION['username']; ?></span>
-                        <span class="chat-state"><?php echo 'online'; ?></span>
-                    </div>
+                    <!-- The users info is inserted from chatHeaderControllers.php called by chat.js -->
                 </div>
                 <div class="chat-messages">
-                        <div class="outgoin-message">
-                            <div class="details">
-                                <p>Lorem, ipsum dolor </p>
-                            </div>
-                        </div>
-                        <div class="incoming-message">
-                            <img class="incoming-message-logo" src="./images/default_user.png" alt="userImage">
-                            <div class="details">
-                                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Est blanditiis illum id rem modi culpa assumenda nemo, quasi, quam commodi, odio minima fuga ut voluptatibus animi dolorum eos quo alias!</p>
-                            </div>
-                        </div>
+                    <!-- Messages get display from chatMessagesControllers.php called by chat.js -->
                 </div>
                 <div class="chat-sent">
-                    <form action="">
-                        <input type="text" name="message" />
-                        <button type="submit">=</button>
+                    <form id="messageForm">
+                        <input type="text" id="sendMessage" class="send-message" placeholder="Send a message..."/>
+                        <button type="submit" id="sendButton" value="sent">=</button>
                     </form>
                 </div>
             </div>
         </div>
     </main>
 </body>
+<script src="./js/chat.js"></script>
 </html>

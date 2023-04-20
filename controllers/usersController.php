@@ -24,11 +24,11 @@ if(!$usersList){
             $profilePicture = $usersList[$i]['profilePicture'];
         }
         if($usersList[$i]['online'] == 1){
-            $online = 'Online';
+            $online = 'Active Now';
         }
         
         $return .= '
-            <a href="index.php?user='.$usersList[$i]['id'].'" class="users-link-container">
+            <a href="index.php?user='.$usersList[$i]['reference'].'" class="users-link-container">
                 <img class="users-available-logo" src="./images/'.$profilePicture.'" alt="userImage">
                 <div class="users-available-info">
                     <span class="users-available-name">'.$usersList[$i]['username'].'</span>

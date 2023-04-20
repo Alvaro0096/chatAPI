@@ -12,7 +12,7 @@ class Users extends DBConnection{
         $query = "SELECT id, reference, username, email, profilePicture, online FROM users WHERE id != :id";
 
         if($searchTerm != NULL){
-            $query .= " AND username LIKE '".$searchTerm."%';";
+            $query .= " AND username LIKE '%".$searchTerm."%';";
         }
 
         $stmt = $this->conn->prepare($query);

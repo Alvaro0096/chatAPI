@@ -81,13 +81,15 @@ body{
     max-width: 450px;
     margin-left: auto;
     margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
     justify-content: flex-end;
 }
 
 .outgoin-message .details{
     width: auto;
-    border-radius: 20px 20px 0 20px;
+    margin-right: 5px;
+    border-radius: 10px 10px 0 10px;
     background-color: green;
 }
 
@@ -100,15 +102,16 @@ body{
     max-width: 450px;
     margin-right: auto;
     margin-top: 10px;
+    margin-bottom: 10px;
     display: flex;
-    border-radius: 20px 20px 20px 0;
+    border-radius: 10px 10px 10px 0;
     background-color: gray;
 }
 
 .incoming-message-logo{
     height: 40px;
     width: 40px;
-    margin: 0 10px;
+    margin: 10px 5px 0 5px;
     border-radius: 50%;
     background-color: green;
 }
