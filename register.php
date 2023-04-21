@@ -7,27 +7,22 @@ require './header.php';
         <div class="form-container">
             <form action="./controllers/registerController.php" method="POST" enctype="multipart/form-data" autocomplete="OFF">
                 <div class="input-container">
-                    <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required />
+                    <input type="text" id="username" name="username" placeholder="Username" required />
                 </div>
                 <div class="input-container">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required />
+                    <input type="email" id="email" name="email" placeholder="Email" required />
                 </div>
                 <div class="input-container">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required />
+                    <input type="password" id="password" name="password" placeholder="Password" required />
                 </div>
                 <div class="input-container">
-                    <label for="confirmPassword">Confirm Password:</label>
-                    <input type="password" id="confirmPassword" name="confirmPassword" required />
+                    <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Confirm Password" required />
                 </div>
                 <div class="input-container">
-                    <label for="userImage">User Image:</label>
                     <input type="file" id="userImage" name="userImage" />
                 </div>
                 <div class="input-container">
-                    <input type="submit" name="submit" value="Send" />
+                    <input class="submit-input" type="submit" name="submit" value="Send" />
                 </div>
                 <?php
                     if(isset($_GET['error'])){

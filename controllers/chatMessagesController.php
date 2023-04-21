@@ -10,7 +10,7 @@ $chatMessages = new Chat();
 $getMessages = $chatMessages->getMessages($senderMessage, $receiverMessage);
 
 if(!$getMessages){
-    echo 'no message available';
+    echo '';
     exit;
 }
 

@@ -23,7 +23,7 @@ require './header.php';
                 </div>
             </div>
             <div class="users-search">
-                <input type="text" id="usersInput" class="users-input" placeholder="Search available users...">
+                <input type="text" id="usersInput" class="users-input" placeholder="Search users">
             </div>
             <div class="users-available">
                 <!-- The users are inserted from usersControllers.php called by users.js -->

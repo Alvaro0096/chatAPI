@@ -16,19 +16,24 @@ if(!$userData){
 } else {
     $profilePicture = 'default_user.png';
     $online = 'Not available';
+    $bubbleActive = 'bubbleInactive';
 
     if(!empty($userData['profilePicture'])){
         $profilePicture = $userData['profilePicture'];
     }
     if($userData['online'] == 1){
         $online = 'Active Now';
+        $bubbleActive = 'bubbleActive';
     }
     
     $return = '
         <img class="chat-logo" src="./images/'.$profilePicture.'" alt="userImage">
         <div class="chat-info">
             <span class="chat-name">'.$userData['username'].'</span>
-            <span class="chat-state">'.$online.'</span>
+            <div class="chat-state">
+                <span>'.$online.'</span>
+                <span class="'.$bubbleActive.'"></span>
+            </div>
         </div>
     ';
 

@@ -20,7 +20,7 @@ require './header.php';
                 <div class="chat-sent">
                     <form id="messageForm">
                         <input type="text" id="sendMessage" class="send-message" placeholder="Send a message..."/>
-                        <button type="submit" id="sendButton" value="sent">=</button>
+                        <button type="submit" id="sendButton" value="sent">►</button>
                     </form>
                 </div>
             </div>

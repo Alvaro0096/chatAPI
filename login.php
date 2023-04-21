@@ -7,15 +7,18 @@ require './header.php';
         <div class="form-container">
             <form action="./controllers/loginController.php" method="POST" autocomplete="OFF">
                 <div class="input-container">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required />
+                    <!-- <label for="email">Email:</label> -->
+                    <input type="email" id="email" name="email" placeholder="Email" required />
                 </div>
                 <div class="input-container">
-                    <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required />
+                    <!-- <label for="password">Password:</label> -->
+                    <input type="password" id="password" name="password" placeholder="Password" required />
                 </div>
                 <div class="input-container">
-                    <input type="submit" name="submit" value="Send" />
+                    <input class="submit-input" type="submit" name="submit" value="Send" />
+                </div>
+                <div class="forgot-link">
+                    <a href="">Forgot your password?</a>
                 </div>
                 <?php
                     if(isset($_GET['error'])){
