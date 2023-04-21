@@ -8,6 +8,7 @@ $receiverMessage = $_GET['user'];
 
 $chatMessages = new Chat();
 $getMessages = $chatMessages->getMessages($senderMessage, $receiverMessage);
+$getReceiverUser = $chatMessages->getReceiverUser($receiverMessage);
 
 if(!$getMessages){
     echo '';
@@ -27,6 +28,10 @@ for($i = 0; $i < count($getMessages); $i++){
         echo $return;
     } else {
         $profilePicture = 'default_user.png';
+        if(!empty($getReceiverUser['profilePicture'])){
+            $profilePicture = $getReceiverUser['profilePicture'];
+        }
+        
         $return = '
             <div class="incoming-message">
                 <img class="incoming-message-logo" src="./images/'.$profilePicture.'" alt="userImage">

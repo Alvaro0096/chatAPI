@@ -65,4 +65,21 @@ class Chat extends DBConnection{
             return $row;
         }
     }
+
+    public function getReceiverUser($reference){
+        $query = "SELECT profilePicture FROM users WHERE reference = :reference;";
+
+        $stmt = $this->conn->prepare($query);
+
+        $stmt->bindParam(':reference', $reference);
+        $stmt->execute();
+        $count = $stmt->rowCount();
+
+        if($count == 0){
+            return false;
+        } else {
+            $row = $stmt->fetch(PDO::FETCH_ASSOC);
+            return $row;
+        }
+    }
 }
